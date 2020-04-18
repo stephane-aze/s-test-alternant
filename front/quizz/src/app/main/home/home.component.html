@@ -1,0 +1,17 @@
+<main>
+  <h1 class="padded text-center">Bienvenue sur QuizzFacile</h1>
+
+  <div class="text-center padded">
+    <!----> <ng-container *ngIf="user; else login">
+      <h2>Welcome {{ user.userName }}!</h2>
+      
+    </ng-container>
+
+    <ng-template #login>
+      <button  routerLink="/user/login">Se connecter</button>
+    </ng-template>
+
+  </div>
+
+</main>
+

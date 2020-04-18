@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "stephane",
+      "password": "1234Aze.",
+      "result":[
+        {"id":1,
+        "quizz_id":1,
+        "score":66.6
+      }
+      ]
+
+    },
+    {
+        "id": 2,
+        "username": "invite",
+        "password": "1_Invinted",
+        "result":[
+
+      ]
+    }
+  ],
+  "quizz": [
+    {
+      "id": 1,
+      "title": "Géographie",
+      "questions": [
+        {
+          "id":1,
+          "text": "Quelle est la capitale du Portugal?",
+          "answers":[{
+            "id":1,
+            "text": "Paris",
+            "isExact": false
+          },
+          {
+            "id":2,
+            "text": "Rome",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "Lisbonne",
+            "isExact": true
+          },
+          {
+            "id":4,
+            "text": "Londres",
+            "isExact": false
+          }
+        ]
+        }
+
+      ]
+    }
+  ]
+}
