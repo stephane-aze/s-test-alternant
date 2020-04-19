@@ -1,7 +1,7 @@
 <div class="text-center padded">
   <ng-container *ngIf="user; else login">
     <p>Bienvenue {{user.username}} !</p>
-    <span>Listes des quizz:</span>
+    <h3>Listes des quizz:</h3>
     <div class="list-group" *ngIf="quizz$ | async as quizz;"  data-testid="display-quizz">
       <div class="list-group-item list-group-item-action" *ngFor="let quiz of quizz" (click)="openDetails(quiz.id) ">
           {{quiz.title}}
