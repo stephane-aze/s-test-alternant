@@ -50,6 +50,56 @@
             "isExact": false
           }
         ]
+        },
+        {
+          "id":1,
+          "text": "Quel pays est en Amérique du Sud?",
+          "answers":[{
+            "id":1,
+            "text": "Uruguay",
+            "isExact": true
+          },
+          {
+            "id":2,
+            "text": "Australie",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "Mexique",
+            "isExact": false
+          },
+          {
+            "id":4,
+            "text": "Roumanie",
+            "isExact": false
+          }
+        ]
+        },
+        {
+          "id":1,
+          "text": "Quel océan entourne L'île de la Réunion?",
+          "answers":[{
+            "id":1,
+            "text": "Océan Altantique",
+            "isExact": false
+          },
+          {
+            "id":2,
+            "text": "Océan Pacifique",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "Océan Antactique",
+            "isExact": false
+          },
+          {
+            "id":4,
+            "text": "Océan Indien",
+            "isExact": true
+          }
+        ]
         }
 
       ]
@@ -128,7 +178,7 @@
           },
           {
             "id":4,
-            "text": "x=0 et x=2",
+            "text": "Un triangle avec un coté de deux fois plus longue que les autres",
             "isExact": false
           }
         ]

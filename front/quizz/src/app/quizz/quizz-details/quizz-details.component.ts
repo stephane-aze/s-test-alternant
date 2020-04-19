@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable , interval} from 'rxjs';
 import { QuizzService} from '../quizz.service';
 import { Quizz} from '../quizz';
 import { Question } from '../../question/question';
@@ -16,6 +16,8 @@ export class QuizzDetailsComponent implements OnInit, AppPage {
   public quiz$!: Observable<Quizz>;
   public pageTitle='';
   public questions$!: Observable<Question[]>;
+  public result=0;
+  public indice$=0;
 
   constructor(private route: ActivatedRoute,
     private quiz:QuizzService,
@@ -28,9 +30,17 @@ export class QuizzDetailsComponent implements OnInit, AppPage {
 
     this.quiz$=this.quiz.getQuiz(id);
     this.questions$=this.question.listQuestionsByQuizz(this.quiz$);
+    this.startTimer();
+
   }
-  public chooseAnswer(id: number){
-    alert(id);
+  public chooseAnswer(answer: any){
+    if(answer.isExact==true){
+      this.result++;
+    }
+  }
+  public startTimer(){
+    setInterval(()=>{    this.indice$++;
+    },6000);
   }
 
 }

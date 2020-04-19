@@ -33,5 +33,10 @@ export class UserService {
   public getUser(Id: number): Observable<UserModel> {
     return this.httpClient.get(`api/users/${Id}`);
   }
+  private patchUser(userId: number, data: UserModel): Observable<UserModel> {
+    const URL = `api/users/${userId}`;
+    return this.httpClient.patch<UserModel>(URL, data);
+  }
+
 
 }

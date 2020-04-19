@@ -1,14 +1,17 @@
 <h2>{{pageTitle}}</h2>
 
 <div  *ngIf="questions$ | async as questions; else loading">
-  <div class="cards" *ngFor="let question of questions">
+  <div class="cards" *ngIf="questions[indice$]">
     <div class="card-body">
-      {{question.text}}
+      <h3>{{questions[indice$].text}}</h3>
 
       <br>Réponse:
-      <section class="list-group" *ngIf="question.answers as answers">
-        <div class="list-group-item list-group-item-action" *ngFor="let answer of answers" (click)="chooseAnswer(answer.id) ">{{answer.text}}</div>
-      </section>
+        <div>
+          <section class="list-group" *ngIf="questions[indice$].answers as answers">
+            <div class="list-group-item list-group-item-action" *ngFor="let answer of answers"  (click)="chooseAnswer(answer) ">{{answer.text}}</div>
+          </section>
+
+        </div>
       </div>
   </div>
 </div>
