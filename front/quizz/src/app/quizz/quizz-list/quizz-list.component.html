@@ -1,1 +1,23 @@
-<p>quizz-list works!</p>
+<div class="text-center padded">
+  <ng-container *ngIf="user; else login">
+    <p>Bienvenue {{user.username}} !</p>
+    <span>Listes des quizz:</span>
+    <div class="list-group" *ngIf="quizz$ | async as quizz;"  data-testid="display-quizz">
+      <div class="list-group-item list-group-item-action" *ngFor="let quiz of quizz" (click)="openDetails(quiz.id) ">
+          {{quiz.title}}
+          <div *ngIf="user.result as result" >
+            <div *ngFor="let res of result" >
+              <div *ngIf="res.quizz_id==quiz.id">{{res.score}}%
+                <span style="color:green" *ngIf="res.score>60">Réussi</span>
+              <span *ngIf="res.score<60">Échoué</span>
+              </div>
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #login>
+    <p>Erreur</p>
+  </ng-template>
+  </div>

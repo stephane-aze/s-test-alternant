@@ -1,32 +1,33 @@
-<h2>{{pageTitle}}</h2>
-<form [formGroup]="FormLogin" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
+<div class="text-center padded">
+  <h2>{{pageTitle}}</h2>
+  <form [formGroup]="FormLogin" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
 
-  <div class="form-group row">
-    <div class="wrap-input100 validate-input ">
-        <span class="label-input100">Nom</span>
-        <input id="username" class=" input" type="text"
-        formControlName="username"  required   placeholder="Nom..."   >
-        <div *ngIf="username.invalid && (username.dirty || username.touched)">
-          <div *ngIf="username.errors.required">Le champ nom est obligatoire.</div>
-        </div>
-      </div>
-  </div>
-  <div class="form-group row">
-    <div class="wrap-input100 validate-input ">
-      <span class="label-input100">Mot de passe</span>
-      <input id="password" type='password' class="input "
-          formControlName="password" required placeholder="******">
-          <div *ngIf="password.invalid && password.touched" class="alert alert-danger password-errors">
-            <div>
-              Le mot de passe n'est pas valable (Au moins 8 caractères dont 1 chiffre, 1 Majuscule et 1 caractère spécial)
-            </div>
+    <div class="form-group ">
+      <div class="wrap-input100 validate-input ">
+          <label for="username">Nom: </label>
+          <input id="username" class="form-control" type="text"
+          formControlName="username"  required   placeholder="Nom..."   >
+          <div *ngIf="username.invalid && (username.dirty || username.touched)"  class="alert alert-danger username-errors">
+            <div *ngIf="username.errors.required">Le champ nom est obligatoire.</div>
           </div>
+        </div>
     </div>
-  </div>
-  <button type="submit" class="btn btn-primary"
-  [disabled]="FormLogin.invalid">Se connecter</button>
+    <div class="form-group">
+      <div class="wrap-input100 validate-input ">
+        <label for="password">Mot de passe: </label>
+        <input id="password" type='password' class="form-control"
+            formControlName="password" required placeholder="******">
+            <div *ngIf="password.invalid && password.touched" class="alert alert-danger password-errors">
+              <div>
+                Le mot de passe n'est pas valable (Au moins 8 caractères dont 1 chiffre, 1 Majuscule et 1 caractère spécial)
+              </div>
+            </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"
+    [disabled]="FormLogin.invalid">Se connecter</button>
 
-</form>
-<p class="error">{{ userName$ | async }}</p>
+  </form>
+  <p class="error">{{ username$ | async }}</p>
 
-
+</div>

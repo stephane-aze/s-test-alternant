@@ -3,7 +3,7 @@ import { QuizzShape } from './QuizzShape';
 export class Quizz {
   public readonly id!: number;
   public readonly title!: string;
-  public readonly questions!: [object];
+  public readonly questions!: object[];
 
   public constructor(data: QuizzShape) {
     this.id = data.id;

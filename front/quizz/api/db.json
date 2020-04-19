@@ -53,6 +53,87 @@
         }
 
       ]
+    },
+    {
+      "id": 2,
+      "title": "Mathématiques",
+      "questions": [
+        {
+          "id":1,
+          "text": "Que vaut 12² ?",
+          "answers":[{
+            "id":1,
+            "text": "144",
+            "isExact": true
+          },
+          {
+            "id":2,
+            "text": "196",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "128",
+            "isExact": false
+          },
+          {
+            "id":4,
+            "text": "96",
+            "isExact": false
+          }
+        ]
+        },
+        {
+          "id":2,
+          "text": "Quelles sont les solutions de x²-3x+2=0 ?",
+          "answers":[{
+            "id":1,
+            "text": "x=2 et x=1",
+            "isExact": true
+          },
+          {
+            "id":2,
+            "text": "x=-2 et x=-1",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "x=-4 et x=-1",
+            "isExact": false
+          },
+          {
+            "id":4,
+            "text": "x=0 et x=2",
+            "isExact": false
+          }
+        ]
+        },
+        {
+          "id":3,
+          "text": "Qu'est-ce qu'un triangle isocèle ?",
+          "answers":[{
+            "id":1,
+            "text": "Un triangle avec les trois côtés ayant la même longueur",
+            "isExact": false
+          },
+          {
+            "id":2,
+            "text": "Un triangle ayant un angle droit",
+            "isExact": false
+          },
+          {
+            "id":3,
+            "text": "Un triangle où les angles adjacents à la base sont égaux",
+            "isExact": true
+          },
+          {
+            "id":4,
+            "text": "x=0 et x=2",
+            "isExact": false
+          }
+        ]
+        }
+      ]
     }
   ]
 }

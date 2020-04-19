@@ -17,7 +17,7 @@ export class LoginComponent implements AppPage, OnInit {
   public pageTitle = 'Login';
   FormLogin: FormGroup;
   @ViewChild('login', { static: false }) loginInput: ElementRef;
-  public userName$!: Observable<string>;
+  public username$!: Observable<string>;
 
   constructor(private readonly userService: UserService, private readonly router: Router) { }
   ngOnInit() : void {
@@ -27,7 +27,6 @@ export class LoginComponent implements AppPage, OnInit {
       ]),
       'password': new FormControl('',[
         Validators.required,
-        Validators.minLength(7),
         Validators.pattern(/^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/gm)
       ]),
     }); // <-- add custom validator at the FormGroup level
@@ -37,9 +36,9 @@ export class LoginComponent implements AppPage, OnInit {
   get password() { return this.FormLogin.get('password'); }
   public onSubmit(loginForm): void {
     const { username, password } = loginForm.value;
-   this.userName$=this.userService.authenticate(username, password).pipe(
+   this.username$=this.userService.authenticate(username, password).pipe(
       map(() => {
-        this.goToHome();
+        this.goToQuizz();
         return null;
       }),
       catchError(() => {
@@ -50,6 +49,9 @@ export class LoginComponent implements AppPage, OnInit {
   }
   public onCancel(): void {
     this.goToHome();
+  }
+  private goToQuizz(): void {
+    this.router.navigateByUrl('/quizz');
   }
   private goToHome(): void {
     this.router.navigateByUrl('/');
